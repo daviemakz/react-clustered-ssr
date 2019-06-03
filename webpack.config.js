@@ -2,6 +2,8 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
+process.env.NODE_ENV = 'development';
+
 const browserConfig = {
   entry: './src/client/index.js',
   output: {
@@ -9,6 +11,9 @@ const browserConfig = {
     filename: './public/bundle.js'
   },
   devtool: 'cheap-module-source-map',
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
+  },
   module: {
     rules: [
       {
@@ -58,6 +63,9 @@ const serverConfig = {
     libraryTarget: 'commonjs2'
   },
   devtool: 'cheap-module-source-map',
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
+  },
   module: {
     rules: [
       {
@@ -82,6 +90,10 @@ const serverConfig = {
         exclude: /(node_modules)/,
         loader: 'babel-loader',
         query: { presets: ['react-app'] }
+      },
+      {
+        test: /\.node$/,
+        use: 'node-loader'
       }
     ]
   }

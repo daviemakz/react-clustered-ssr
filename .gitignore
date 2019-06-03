@@ -1,3 +1,7 @@
+# Ignore server output
+server.js
+server.js.map
+
 # Logs
 logs
 *.log
