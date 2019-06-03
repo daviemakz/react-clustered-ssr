@@ -1,0 +1,30 @@
+{
+  "name": "react-ssr-example",
+  "version": "1.0.0",
+  "description": "An example of React server side rendering powered by Risen.JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "yarn test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daviemakz/react-clustered-ssr.git"
+  },
+  "keywords": [
+    "react",
+    "server",
+    "side",
+    "rendering",
+    "risenjs",
+    "risen",
+    "js",
+    "multi",
+    "threaded"
+  ],
+  "author": "David Makuni",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/daviemakz/react-clustered-ssr/issues"
+  },
+  "homepage": "https://github.com/daviemakz/react-clustered-ssr#readme"
+}
