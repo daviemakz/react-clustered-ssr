@@ -1,6 +1,7 @@
 # Ignore server output
 server.js
 server.js.map
+public
 
 # Logs
 logs
