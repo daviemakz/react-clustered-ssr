@@ -1,44 +1,22 @@
-const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const autoprefixer = require('autoprefixer');
+'use strict';
 
-process.env.NODE_ENV = 'development';
+// Declare node enviroment
+process.env.NODE_ENV = 'production';
 
+// Declase browser configuration
 const browserConfig = {
+  mode: 'production',
   entry: './src/client/index.js',
   output: {
     path: __dirname,
     filename: './public/bundle.js'
   },
-  devtool: 'cheap-module-source-map',
+  devtool: 'none',
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
   },
   module: {
     rules: [
-      {
-        test: [/\.svg$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-        loader: 'file-loader',
-        options: {
-          name: 'public/media/[name].[ext]',
-          publicPath: url => url.replace(/public/, '')
-        }
-      },
-      {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            {
-              loader: 'css-loader',
-              options: { importLoaders: 1 }
-            },
-            {
-              loader: 'postcss-loader',
-              options: { plugins: [autoprefixer()] }
-            }
-          ]
-        })
-      },
       {
         test: /js|jsx$/,
         exclude: /(node_modules)/,
@@ -47,56 +25,7 @@ const browserConfig = {
       }
     ]
   },
-  plugins: [
-    new ExtractTextPlugin({
-      filename: 'public/css/[name].css'
-    })
-  ]
+  plugins: []
 };
 
-const serverConfig = {
-  entry: './src/server/index.js',
-  target: 'node',
-  output: {
-    path: __dirname,
-    filename: 'server.js',
-    libraryTarget: 'commonjs2'
-  },
-  devtool: 'cheap-module-source-map',
-  resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
-  },
-  module: {
-    rules: [
-      {
-        test: [/\.svg$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-        loader: 'file-loader',
-        options: {
-          name: 'public/media/[name].[ext]',
-          publicPath: url => url.replace(/public/, ''),
-          emit: false
-        }
-      },
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: 'css-loader/locals'
-          }
-        ]
-      },
-      {
-        test: /js|jsx$/,
-        exclude: /(node_modules)/,
-        loader: 'babel-loader',
-        query: { presets: ['react-app'] }
-      },
-      {
-        test: /\.node$/,
-        use: 'node-loader'
-      }
-    ]
-  }
-};
-
-module.exports = [browserConfig, serverConfig];
+module.exports = [browserConfig];

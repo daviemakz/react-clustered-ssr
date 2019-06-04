@@ -1,6 +1,7 @@
 public
-server.js
-server.js.map
+json.sqlite
+startServer.js
+startServer.js.map
 .gitignore
 .prettierignore
 yarn.lock

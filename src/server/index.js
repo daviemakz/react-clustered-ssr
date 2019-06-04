@@ -1,9 +1,10 @@
 'use strict';
 
-// Import risen
+// Import Risen.JS
 const { Risen } = require('risen-js');
 
-// Define express route
+// The path '/' will send a request to 'primeCalculator' service
+// and send the response back to the client.
 const getPrimeNumber = {
   method: 'GET',
   uri: '/',
@@ -43,7 +44,7 @@ const frameworkOptions = {
 const RisenInstance = new Risen(frameworkOptions);
 
 // Define path to the file which will define the operations a service can perform (without .js extension)
-const primeNumberServiceOperations = './prime-service';
+const primeNumberServiceOperations = './src/server/babel-wrapper';
 
 // Define a micro service
 RisenInstance.defineService('primeCalculator', primeNumberServiceOperations, {
