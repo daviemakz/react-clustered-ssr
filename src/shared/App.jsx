@@ -71,7 +71,8 @@ const App = ({ primeUpTo, listOfPrimes, name, processId }) => {
                   <p style={{ marginTop: '24px', marginBottom: '0px' }}>
                     <i>
                       NOTE: Your request will be sent to the server for
-                      processing and HTML markup returned!
+                      processing and HTML markup returned! React then takes care
+                      of user interaction afterwards.
                     </i>
                   </p>
                 </span>
