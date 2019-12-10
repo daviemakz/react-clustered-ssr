@@ -45,13 +45,13 @@ git clone https://github.com/daviemakz/react-clustered-ssr.git
 Run the following command to install:
 
 ```
-yarn start
+yarn install
 ```
 
 or
 
 ```
-npm run start
+npm install
 ```
 
 ## Starting the framework
