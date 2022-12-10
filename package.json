@@ -32,7 +32,7 @@
   "homepage": "https://github.com/daviemakz/react-clustered-ssr#readme",
   "dependencies": {
     "antd": "^3.19.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "lru-cache": "^5.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
